@@ -1,16 +1,16 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Placeholder."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Yanwan Zhu",
     "section": "",
-    "text": "This is a Quarto website."
+    "text": "Placeholder bio.\nCV · Email · Google Scholar"
   }
 ]

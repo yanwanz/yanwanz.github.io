@@ -1,5 +1,8 @@
 project:
   type: website
+  output-dir: _site
+  resources:
+    - cv.pdf
 
 website:
   title: "Yanwan Zhu"
@@ -7,15 +10,15 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: publications.qmd
+        text: Publications
+      - href: talks.qmd
+        text: Talks
+      - href: teaching.qmd
+        text: Teaching
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: false
-
-
-

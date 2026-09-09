@@ -2,4 +2,8 @@
 title: "Yanwan Zhu"
 ---
 
-This is a Quarto website.
+![](profile.jpg){width=200}
+
+Placeholder bio.
+
+[CV](cv.pdf) · [Email](yanwan_zhu@brown.edu) · [Google Scholar](https://scholar.google.com/citations?user=Q4MAyaoAAAAJ)

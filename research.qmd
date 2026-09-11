@@ -109,11 +109,11 @@ render_pubs <- function(theme) {
 }
 ```
 
-## Overview
+### Overview
 
 My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics. 
 
-## Acquisition of possibility concept and language
+### Acquisition of possibility concept and language
 
 The majority of my PhD work (namely, my dissertation) focuses on the acquisition of possibility *concept* and the role of language in that process. I ask: are possibility concepts the sort of concepts that have to be constructed through language learning? 
 
@@ -123,7 +123,7 @@ The majority of my PhD work (namely, my dissertation) focuses on the acquisition
 render_pubs("modal_development")
 ```
 
-## Language Acquisition in Understudied Populations
+### Language acquisition in understudied populations
 
 When I was an undergrad at Smith College, I worked with Jill de Villiers on a project focusing on Romani-speaking children in Europe. In our paper, in addition to presenting data on Roma children's linguistic knowledge, we argued that studying language acquisition in understudied populations like Roma children is important, highlighting both the scientific merits and the societal implications. 
 

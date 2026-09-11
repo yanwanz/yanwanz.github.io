@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yanwanz.github.io/publications.html</loc>
-    <lastmod>2026-09-10T00:57:36.526Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yanwanz.github.io/talks.html</loc>
-    <lastmod>2026-09-09T19:48:16.180Z</lastmod>
+    <loc>https://yanwanz.github.io/index.html</loc>
+    <lastmod>2026-09-09T21:42:35.389Z</lastmod>
   </url>
   <url>
     <loc>https://yanwanz.github.io/teaching.html</loc>
     <lastmod>2026-09-09T19:48:46.720Z</lastmod>
   </url>
   <url>
-    <loc>https://yanwanz.github.io/index.html</loc>
-    <lastmod>2026-09-09T21:42:35.389Z</lastmod>
+    <loc>https://yanwanz.github.io/research.html</loc>
+    <lastmod>2026-09-11T16:52:11.754Z</lastmod>
   </url>
 </urlset>

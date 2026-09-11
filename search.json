@@ -1,30 +1,37 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Assessing the acquisition of Romani in Roma children\nHristo Kyuchukov, Jill de Villiers, Yanwan Zhu, and Iris Zhong\nLanguage Acquisition, 2025\n\nDOI Preprint"
-  },
-  {
-    "objectID": "publications.html#journal-articles",
-    "href": "publications.html#journal-articles",
-    "title": "Publications",
-    "section": "",
-    "text": "Assessing the acquisition of Romani in Roma children\nHristo Kyuchukov, Jill de Villiers, Yanwan Zhu, and Iris Zhong\nLanguage Acquisition, 2025\n\nDOI Preprint"
-  },
-  {
-    "objectID": "publications.html#under-review",
-    "href": "publications.html#under-review",
-    "title": "Publications",
-    "section": "Under Review",
-    "text": "Under Review\nToddlers use “if”, rather than “when”, to talk about mere possibilities\nYanwan Zhu, and Roman Feiman\nCognition"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Yanwan Zhu",
     "section": "",
     "text": "Placeholder bio.\nCV · Email · Google Scholar"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics."
+  },
+  {
+    "objectID": "research.html#overview",
+    "href": "research.html#overview",
+    "title": "Research",
+    "section": "",
+    "text": "My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics."
+  },
+  {
+    "objectID": "research.html#acquisition-of-possibility-concept-and-language",
+    "href": "research.html#acquisition-of-possibility-concept-and-language",
+    "title": "Research",
+    "section": "Acquisition of possibility concept and language",
+    "text": "Acquisition of possibility concept and language\nThe majority of my PhD work (namely, my dissertation) focuses on the acquisition of possibility concept and the role of language in that process. I ask: are possibility concepts the sort of concepts that have to be constructed through language learning?\n\n\n\nYanwan Zhu & Roman Feiman.\n\n\nToddlers use “if”, rather than “when”, to talk about mere possibilities\n\n\nManuscript under review."
+  },
+  {
+    "objectID": "research.html#language-acquisition-in-understudied-populations",
+    "href": "research.html#language-acquisition-in-understudied-populations",
+    "title": "Research",
+    "section": "Language Acquisition in Understudied Populations",
+    "text": "Language Acquisition in Understudied Populations\nWhen I was an undergrad at Smith College, I worked with Jill de Villiers on a project focusing on Romani-speaking children in Europe. In our paper, in addition to presenting data on Roma children’s linguistic knowledge, we argued that studying language acquisition in understudied populations like Roma children is important, highlighting both the scientific merits and the societal implications.\n\n\n\nHristo Kyuchukov, Jill de Villiers, Yanwan Zhu, & Iris Zhong (2025).\n\n\nAssessing the acquisition of Romani in Roma children\n\n\nLanguage Acquisition.\n\n\n[DOI] [Preprint]"
   }
 ]

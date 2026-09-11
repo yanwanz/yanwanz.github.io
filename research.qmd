@@ -1,0 +1,134 @@
+---
+title: "Research"
+---
+
+```{r}
+#| echo: false
+#| warning: false
+
+# ---- config -------------------------------------------------------------
+me <- "Yanwan Zhu"
+
+known_types <- c("journal_article", "conference_paper", "preprint",
+                 "book_chapter", "dissertation", "under_review",
+                 "in_preparation")
+
+# ---- read ---------------------------------------------------------------
+pubs <- read.csv("publications.csv", stringsAsFactors = FALSE,
+                 na.strings = c("", "NA"))
+
+expected <- c("title", "authors", "year", "publication", "type", "theme",
+              "doi", "preprint_url", "github_url", "pdf_url",
+              "poster_url", "image")
+
+missing <- setdiff(expected, names(pubs))
+for (col in missing) pubs[[col]] <- NA_character_
+
+required <- c("title", "authors", "type", "theme")
+if (length(intersect(required, missing))) {
+  stop("publications.csv is missing required column(s): ",
+       paste(intersect(required, missing), collapse = ", "))
+}
+
+pubs$type  <- tolower(trimws(pubs$type))
+pubs$theme <- trimws(pubs$theme)
+
+# ---- validate -----------------------------------------------------------
+bad <- setdiff(unique(pubs$type), known_types)
+if (length(bad)) stop("Unknown type(s): ", paste(bad, collapse = ", "))
+
+no_me <- !grepl(me, pubs$authors, fixed = TRUE)
+if (any(no_me)) {
+  warning("Name missing from authors for: ",
+          paste(pubs$title[no_me], collapse = "; "))
+}
+
+.rendered <- character(0)
+
+# ---- helpers ------------------------------------------------------------
+fmt_authors <- function(x) {
+  a <- trimws(strsplit(x, ";")[[1]])
+  a <- ifelse(a == me, paste0("<strong>", a, "</strong>"), a)
+  if (length(a) == 1) return(a)
+  if (length(a) == 2) return(paste(a, collapse = " & "))
+  paste0(paste(a[-length(a)], collapse = ", "), ", & ", a[length(a)])
+}
+
+fmt_venue <- function(r) {
+  if (is.na(r$publication)) {
+    return(switch(r$type,
+      under_review   = "Manuscript under review.",
+      in_preparation = "In preparation.",
+      ""))
+  }
+  prefix <- if (r$type %in% c("conference_paper", "book_chapter")) "In " else ""
+  paste0(prefix, "<em>", r$publication, "</em>.")
+}
+
+fmt_links <- function(r) {
+  l <- c(
+    if (!is.na(r$pdf_url))      sprintf('<a href="%s">Paper</a>', r$pdf_url),
+    if (!is.na(r$doi))          sprintf('<a href="https://doi.org/%s">DOI</a>', r$doi),
+    if (!is.na(r$preprint_url)) sprintf('<a href="%s">Preprint</a>', r$preprint_url),
+    if (!is.na(r$poster_url))   sprintf('<a href="%s">Poster</a>', r$poster_url),
+    if (!is.na(r$github_url))   sprintf('<a href="%s">Code</a>', r$github_url)
+  )
+  if (!length(l)) return("")
+  paste0('<div class="pub-links">[', paste(l, collapse = "] ["), ']</div>')
+}
+
+# ---- renderer -----------------------------------------------------------
+render_pubs <- function(theme) {
+  rows <- pubs[pubs$theme == theme, ]
+  .rendered <<- c(.rendered, theme)
+
+  if (!nrow(rows)) {
+    warning("No publications with theme: ", theme)
+    return(invisible())
+  }
+
+  yr <- suppressWarnings(as.numeric(rows$year))
+  yr[is.na(yr)] <- Inf
+  rows <- rows[order(-yr), ]
+
+  for (i in seq_len(nrow(rows))) {
+    r <- rows[i, ]
+    cat('<div class="pub">\n')
+    if (!is.na(r$image)) {
+      cat(sprintf('<img class="pub-thumb" src="%s" alt="">\n', r$image))
+    }
+    cat('<div class="pub-body">\n')
+    yr_txt <- if (is.na(r$year)) "" else paste0(" (", r$year, ")")
+    cat('<div class="pub-cite">', fmt_authors(r$authors), yr_txt, ".</div>\n", sep = "")
+    cat('<div class="pub-title">', r$title, '</div>\n', sep = "")
+    cat('<div class="pub-venue">', fmt_venue(r), '</div>\n', sep = "")
+    cat(fmt_links(r), "\n")
+    cat('</div>\n</div>\n\n')
+  }
+  invisible()
+}
+```
+
+## Overview
+
+My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics. 
+
+## Acquisition of possibility concept and language
+
+The majority of my PhD work (namely, my dissertation) focuses on the acquisition of possibility *concept* and the role of language in that process. I ask: are possibility concepts the sort of concepts that have to be constructed through language learning? 
+
+```{r}
+#| echo: false
+#| output: asis
+render_pubs("modal_development")
+```
+
+## Language Acquisition in Understudied Populations
+
+When I was an undergrad at Smith College, I worked with Jill de Villiers on a project focusing on Romani-speaking children in Europe. In our paper, in addition to presenting data on Roma children's linguistic knowledge, we argued that studying language acquisition in understudied populations like Roma children is important, highlighting both the scientific merits and the societal implications. 
+
+```{r}
+#| echo: false
+#| output: asis
+render_pubs("language_assessment")
+```

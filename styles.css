@@ -1,1 +1,28 @@
 /* css styles */
+
+.pub {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.pub-thumb {
+  width: 90px;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.pub-body { flex: 1; }
+
+.pub-cite,
+.pub-title,
+.pub-venue { line-height: 1.4; }
+
+.pub-links { margin-top: 0.15rem; }
+.pub-links a { text-decoration: none; }
+
+@media (max-width: 600px) {
+  .pub { flex-direction: column; }
+  .pub-thumb { width: 100%; max-width: 200px; }
+}

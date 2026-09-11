@@ -1,9 +1,23 @@
 ---
 title: "Yanwan Zhu"
+image: profile.jpg
+about:
+  template: trestles
+  image-width: 12em
+  image-shape: round
+  links:
+    - icon: envelope
+      text: Email
+      href: yanwan_zhu@brown.edu
+    - text: Google Scholar
+      href: https://scholar.google.com/citations?user=Q4MAyaoAAAAJ
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/yanwan.bsky.social
 ---
 
-![](profile.jpg){width=200}
+Hi! I'm a sixth year PhD student in the [Department of Cognitive and Psychological Sciences](https://copsy.brown.edu/) at [Brown University](https://www.brown.edu/). I'm interested in understanding how children and adults represent (or learn to represent) complex meanings in their mind. I'm especially interested in abstract logical expressions (broadly defined) and learnability problems. At Brown, I'm advised by [Roman Feiman](https://www.brown.edu/academics/cognitive-linguistic-psychological-sciences/people/faculty/roman-feiman) and affiliated with the [BLT lab](https://sites.brown.edu/bltlab/). Here is the most updated version my [CV](cv.pdf).
 
-Placeholder bio.
+Before coming to Brown, I was an undergraduate studying Linguistics and [Statistical & Data Sciences](https://twitter.com/smithcollegesds) at [Smith College](https://www.smith.edu/). At Smith, I worked with [Jill de Villiers](https://www.smith.edu/academics/faculty/jill-de-villiers) on language acquisition and assessment.
 
-[CV](cv.pdf) · [Email](yanwan_zhu@brown.edu) · [Google Scholar](https://scholar.google.com/citations?user=Q4MAyaoAAAAJ)
+About my name: Here is the [IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet): [$jɛnwan \; ʈʂu$]. To pronounce my last name semi-accurately (i.e. enough to make me realize that I am being referred to), you could say *juice* without the [s]. 

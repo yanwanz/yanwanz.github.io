@@ -1,10 +1,17 @@
 /* css styles */
 
+/* Optional: embed custom fonts here with `@import`          */
+@import url('https://fonts.googleapis.com/css2?family=Jost');
+@import url('https://fonts.googleapis.com/css2?family=Kanit');
+@import url('https://fonts.googleapis.com/css2?family=Alata');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans');
+
 .pub {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
   align-items: flex-start;
+  padding-left: 1.5rem;
 }
 
 .pub-thumb {
@@ -15,9 +22,9 @@
 
 .pub-body { flex: 1; }
 
-.pub-cite,
-.pub-title,
-.pub-venue { line-height: 1.4; }
+.pub-cite {
+  line-height: 1.45;
+}
 
 .pub-links { margin-top: 0.15rem; }
 .pub-links a { text-decoration: none; }

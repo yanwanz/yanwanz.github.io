@@ -99,9 +99,11 @@ render_pubs <- function(theme) {
     }
     cat('<div class="pub-body">\n')
     yr_txt <- if (is.na(r$year)) "" else paste0(" (", r$year, ")")
-    cat('<div class="pub-cite">', fmt_authors(r$authors), yr_txt, ".</div>\n", sep = "")
-    cat('<div class="pub-title">', r$title, '</div>\n', sep = "")
-    cat('<div class="pub-venue">', fmt_venue(r), '</div>\n', sep = "")
+    cat('<div class="pub-cite">',
+        fmt_authors(r$authors), yr_txt, ". ",
+        r$title, ". ",
+        fmt_venue(r),
+        '</div>\n', sep = "")
     cat(fmt_links(r), "\n")
     cat('</div>\n</div>\n\n')
   }
@@ -111,11 +113,11 @@ render_pubs <- function(theme) {
 
 ### Overview
 
-My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics. 
+My research interests lie at the intersection of many branches of cognitive science, including but not limited to: developmental psychology, semantics & pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics. 
 
 ### Acquisition of possibility concept and language
 
-The majority of my PhD work (namely, my dissertation) focuses on the acquisition of possibility *concept* and the role of language in that process. I ask: are possibility concepts the sort of concepts that have to be constructed through language learning? 
+The main focus of my PhD work has been on children’s concept of possibility — the ability to mark a proposition as being merely possible (like the operator $\Diamond$ in modal logic). I ask: can this logical concept be learned without language, or do they have to be constructed through the process of figuring out what words and phrases mean in a language?
 
 ```{r}
 #| echo: false

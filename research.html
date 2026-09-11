@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -140,21 +169,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level3">
 <h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<p>My research interests lie at the intersection of many subfields of cognitive science, including but not limited to: developmental psychology, semantics &amp; pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics.</p>
+<p>My research interests lie at the intersection of many branches of cognitive science, including but not limited to: developmental psychology, semantics &amp; pragmatics, philosophy of mind, etc. Below is a list of projects I have worked on, organized by topics.</p>
 </section>
 <section id="acquisition-of-possibility-concept-and-language" class="level3">
 <h3 class="anchored" data-anchor-id="acquisition-of-possibility-concept-and-language">Acquisition of possibility concept and language</h3>
-<p>The majority of my PhD work (namely, my dissertation) focuses on the acquisition of possibility <em>concept</em> and the role of language in that process. I ask: are possibility concepts the sort of concepts that have to be constructed through language learning?</p>
+<p>The main focus of my PhD work has been on children’s concept of possibility — the ability to mark a proposition as being merely possible (like the operator <span class="math inline">\(\Diamond\)</span> in modal logic). I ask: can this logical concept be learned without language, or do they have to be constructed through the process of figuring out what words and phrases mean in a language?</p>
 <div class="pub">
 <div class="pub-body">
 <div class="pub-cite">
-<strong>Yanwan Zhu</strong> &amp; Roman Feiman.
-</div>
-<div class="pub-title">
-Toddlers use “if”, rather than “when”, to talk about mere possibilities
-</div>
-<div class="pub-venue">
-Manuscript under review.
+<strong>Yanwan Zhu</strong> &amp; Roman Feiman. Toddlers use “if”, rather than “when”, to talk about mere possibilities. Manuscript under review.
 </div>
 </div>
 </div>
@@ -165,13 +188,7 @@ Manuscript under review.
 <div class="pub">
 <div class="pub-body">
 <div class="pub-cite">
-Hristo Kyuchukov, Jill de Villiers, <strong>Yanwan Zhu</strong>, &amp; Iris Zhong (2025).
-</div>
-<div class="pub-title">
-Assessing the acquisition of Romani in Roma children
-</div>
-<div class="pub-venue">
-<em>Language Acquisition</em>.
+Hristo Kyuchukov, Jill de Villiers, <strong>Yanwan Zhu</strong>, &amp; Iris Zhong (2025). Assessing the acquisition of Romani in Roma children. <em>Language Acquisition</em>.
 </div>
 <div class="pub-links">
 [<a href="https://doi.org/https://doi.org/10.1080/10489223.2024.2310849">DOI</a>] [<a href="https://scholarworks.smith.edu/cgi/viewcontent.cgi?article=1232&amp;context=psy_facpubs">Preprint</a>]

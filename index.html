@@ -37,7 +37,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -71,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -117,43 +145,42 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
+<div class="quarto-about-trestles">
+  <div class="about-entity">
+    <img src="profile.jpg" class="about-image
+  round " style="height: 12em; width: 12em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Yanwan Zhu</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
   </div>
-  
-
-
 </header>
+    <div class="about-links">
+  <a href="/yanwan_zhu@brown.edu" class="about-link" rel="" target="">
+    <i class="bi bi-envelope"></i>
+     <span class="about-link-text">Email</span>
+  </a>
+  <a href="https://scholar.google.com/citations?user=Q4MAyaoAAAAJ" class="about-link" rel="" target="">
+     <span class="about-link-text">Google Scholar</span>
+  </a>
+  <a href="https://bsky.app/profile/yanwan.bsky.social" class="about-link" rel="" target="">
+    <i class="bi bi-bluesky"></i>
+     <span class="about-link-text">Bluesky</span>
+  </a>
+</div>
+  </div>
+  <div class="about-contents"><main class="content" id="quarto-document-content">
+<p>Hi! I’m a sixth year PhD student in the <a href="https://copsy.brown.edu/">Department of Cognitive and Psychological Sciences</a> at <a href="https://www.brown.edu/">Brown University</a>. I’m interested in understanding how children and adults represent (or learn to represent) complex meanings in their mind. I’m especially interested in abstract logical expressions (broadly defined) and learnability problems. At Brown, I’m advised by <a href="https://www.brown.edu/academics/cognitive-linguistic-psychological-sciences/people/faculty/roman-feiman">Roman Feiman</a> and affiliated with the <a href="https://sites.brown.edu/bltlab/">BLT lab</a>. Here is the most updated version my <a href="cv.pdf">CV</a>.</p>
+<p>Before coming to Brown, I was an undergraduate studying Linguistics and <a href="https://twitter.com/smithcollegesds">Statistical &amp; Data Sciences</a> at <a href="https://www.smith.edu/">Smith College</a>. At Smith, I worked with <a href="https://www.smith.edu/academics/faculty/jill-de-villiers">Jill de Villiers</a> on language acquisition and assessment.</p>
+<p>About my name: Here is the <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">IPA</a>: [<span class="math inline">\(jɛnwan \; ʈʂu\)</span>]. To pronounce my last name semi-accurately (i.e.&nbsp;enough to make me realize that I am being referred to), you could say <em>juice</em> without the [s].</p>
 
 
-<p><img src="profile.jpg" class="img-fluid" width="200"></p>
-<p>Placeholder bio.</p>
-<p><a href="cv.pdf">CV</a> · <a href="yanwan_zhu@brown.edu">Email</a> · <a href="https://scholar.google.com/citations?user=Q4MAyaoAAAAJ">Google Scholar</a></p>
-
-
-
-</main> <!-- /main -->
+</main></div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

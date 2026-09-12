@@ -1,8 +1,11 @@
+// dark.scss
 /*-- scss:defaults --*/
-$body-bg:    #16181c;
-$body-color: #d8d6d1;
-$link-color: #d8d6d1;
-$border-color: #2c2f36;
+$body-bg:          #16181c;
+$body-color:       #d8d6d1;
+$link-color:       #d8d6d1;
+$link-hover-color: #d4fc0d;
+$border-color:     #2c2f36;
 
 $navbar-bg: $body-bg;
 $navbar-fg: $body-color;
+$navbar-hl: #d4fc0d;

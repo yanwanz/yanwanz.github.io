@@ -6,14 +6,18 @@ project:
 
 website:
   title: "Yanwan Zhu"
+  site-url: "https://yanwanz.github.io"
+  image: profile.jpg
+  open-graph: true
+  favicon: favicon.png
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: about
       - href: research.qmd
-        text: Research
+        text: research
       - href: teaching.qmd
-        text: Teaching
+        text: teaching
 
 format:
   html:

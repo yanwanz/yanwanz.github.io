@@ -1,8 +1,11 @@
+// light.scss
 /*-- scss:defaults --*/
-$body-bg:    #fdfdfc;
-$body-color: #1f2124;
-$link-color: #1f2124;
-$border-color: #e3e3e0;
+$body-bg:          #fefefe;
+$body-color:       #1f2124;
+$link-color:       #1f2124;
+$link-hover-color: #310af5;
+$border-color:     #e3e3e0;
 
 $navbar-bg: $body-bg;
 $navbar-fg: $body-color;
+$navbar-hl: #310af5;

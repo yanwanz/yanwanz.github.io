@@ -18,8 +18,7 @@ pubs <- read.csv("publications.csv", stringsAsFactors = FALSE,
                  na.strings = c("", "NA"))
 
 expected <- c("title", "authors", "year", "publication", "type", "theme",
-              "doi", "preprint_url", "github_url", "pdf_url",
-              "poster_url", "image")
+              "doi", "preprint_url", "github_url", "pdf_url", "poster_url")
 
 missing <- setdiff(expected, names(pubs))
 for (col in missing) pubs[[col]] <- NA_character_
@@ -55,14 +54,22 @@ fmt_authors <- function(x) {
 }
 
 fmt_venue <- function(r) {
-  if (is.na(r$publication)) {
-    return(switch(r$type,
-      under_review   = "Manuscript under review.",
-      in_preparation = "In preparation.",
-      ""))
-  }
+  if (is.na(r$publication)) return("")
   prefix <- if (r$type %in% c("conference_paper", "book_chapter")) "In " else ""
   paste0(prefix, "<em>", r$publication, "</em>.")
+}
+
+fmt_year <- function(r) {
+  status <- switch(r$type,
+    under_review   = "under<br>review",
+    in_preparation = "in<br>prep",
+    NULL)
+
+  if (!is.null(status)) {
+    return(paste0('<span class="pub-status">', status, '</span>'))
+  }
+  if (is.na(r$year)) return("&mdash;")
+  as.character(r$year)
 }
 
 fmt_links <- function(r) {
@@ -91,22 +98,22 @@ render_pubs <- function(theme) {
   yr[is.na(yr)] <- Inf
   rows <- rows[order(-yr), ]
 
+  cat('<div class="pub-group">\n')
+
   for (i in seq_len(nrow(rows))) {
     r <- rows[i, ]
     cat('<div class="pub">\n')
-    if (!is.na(r$image)) {
-      cat(sprintf('<img class="pub-thumb" src="%s" alt="">\n', r$image))
-    }
-    cat('<div class="pub-body">\n')
-    yr_txt <- if (is.na(r$year)) "" else paste0(" (", r$year, ")")
+    cat('<div class="pub-year">', fmt_year(r), '</div>\n', sep = "")
     cat('<div class="pub-cite">',
-        fmt_authors(r$authors), yr_txt, ". ",
+        fmt_authors(r$authors), ". ",
         r$title, ". ",
         fmt_venue(r),
         '</div>\n', sep = "")
     cat(fmt_links(r), "\n")
-    cat('</div>\n</div>\n\n')
+    cat('</div>\n')
   }
+
+  cat('</div>\n')
   invisible()
 }
 ```
